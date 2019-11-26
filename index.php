@@ -9,6 +9,7 @@ session_start();
     {
        header("location:login.php");
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +24,22 @@ session_start();
     <link rel="icon" href="icon.jpg">
 </head>
 <body>
+    <div>
+    <?php
+    $result = $conn->query("SELECT * FROM members ORDER BY id DESC");
+    $user = $result->fetch(PDO::FETCH_ASSOC);
+
+    $sql = "SELECT * from members WHERE id = :id";
+    $query = $conn -> prepare($sql);
+    $query->bindParam('')
+    ?>
+    <h1>welcome back! <?php echo $user['fname']?> </h1>
+        <ul>
+        <li>
+
+        </li>
+        </ul>
+    </div>
     <a href="logout.php">log-out</a>
 </body> 
 </html>

@@ -31,11 +31,13 @@ if(isset($_SESSION['tae']))
             $query -> bindParam(':username', $user);
             $query -> bindParam(':password', $pswd);
             $query -> execute();
-            
+
+            $result = $conn->query("SELECT * FROM members ORDER BY id DESC");
+            $user = $query->fetch(PDO::FETCH_ASSOC);
             $count = $query->rowCount();
             if($count > 0)
                 {
-                    $_SESSION['login'] = "login";
+                    $_SESSION['login'] = $user['ID'];
                     header("location:index.php");
                 }
                 else
@@ -75,7 +77,7 @@ if(isset($_SESSION['tae']))
         </div>
         <button type="submit" name="login" class="btn btn-primary">Log-In</button>
     </form>
-    <form action="login.php" method="POST" class="signup">
+    <form action="register.php" method="POST" class="signup">
         <h3>Or are you new?</h3>
         <div class="form-group">
             <label for="">First name:</label><br>
@@ -83,7 +85,7 @@ if(isset($_SESSION['tae']))
         </div>
         <div class="form-group">
             <label for="">Last name:</label><br>
-            <input type="text" class="lnamereg" placeholder="last name" name="fname">
+            <input type="text" class="lnamereg" placeholder="last name" name="lname">
         </div>
         <div class="form-group">
             <label for="">Age:</label><br>
@@ -102,6 +104,7 @@ if(isset($_SESSION['tae']))
             <label for="">password:</label><br>
             <input type="password" class="pswdreg" placeholder="new password" name="pswdreg">
         </div>
+        <button type="submit" name="register" class="btn btn-primary">Register</button>
     </form>
     </div>
 </body>

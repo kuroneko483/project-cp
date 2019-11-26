@@ -28,11 +28,13 @@
         $query -> bindParam(':ppswd', $pswd);
         $query -> execute();
 
+        $result = $conn->query("SELECT * FROM members ORDER BY id DESC");
+        $user = $query->fetch(PDO::FETCH_ASSOC);
         $count = $query->rowCount();
 
         if($count > 0)
         {
-            $_SESSION['login'] = "login";
+            $_SESSION['login'] = $user['ID'];
             header("location:index.php");
         }
     } 
@@ -49,7 +51,7 @@
     <title>Wrong Username or Password | Try Again!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icon.jpg">
 </head>
 <body>
