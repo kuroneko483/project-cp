@@ -72,7 +72,8 @@
 		$query->bindparam(':password', $pswd);
 		$query->execute();
         }
-        header("location:index.php");
+        echo "<p>REGISTRATION COMPLETE!</p>";
+        echo "Click <a href=\"login.php\">here</a> to Log-in";
         
     }
     ?>

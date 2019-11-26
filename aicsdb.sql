@@ -27,6 +27,9 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `cellphone`
 --
+create database aicsdb;
+
+use aicsdb;
 
 CREATE TABLE `cellphone` (
   `id` int(11) NOT NULL,

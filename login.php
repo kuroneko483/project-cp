@@ -1,7 +1,7 @@
 <?php
 include_once("config.php");
 session_start();
-if(isset($_SESSION['tae']))
+if(isset($_SESSION['login']))
 {
     header("location:index.php");
 }

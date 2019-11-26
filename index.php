@@ -3,7 +3,7 @@ include_once("config.php");
 session_start();
     if(isset($_SESSION['login']))
     {
-         echo "<h1>SURPRISE MOTHERFUCKER!</h1>";
+         echo "<h1> WELCOME TO MOBILE LEGEND!</h1>";
     }
     else
     {
@@ -26,12 +26,15 @@ session_start();
 <body>
     <div>
     <?php
-    $result = $conn->query("SELECT * FROM members ORDER BY id DESC");
-    $user = $result->fetch(PDO::FETCH_ASSOC);
-
     $sql = "SELECT * from members WHERE id = :id";
     $query = $conn -> prepare($sql);
-    $query->bindParam('')
+    $query->bindParam(':id', $_SESSION['login']);
+    $query->execute();
+
+    $result = $conn->query("SELECT * FROM members ORDER BY id DESC");
+    $user = $query->fetch(PDO::FETCH_ASSOC);
+
+    
     ?>
     <h1>welcome back! <?php echo $user['fname']?> </h1>
         <ul>
