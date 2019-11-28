@@ -36,29 +36,38 @@
             if(empty($fname))
             {
                 $empfname = "Firstname is empty";
+                echo $empfname . "<br/>";
             }
             if(empty($lname))
             {
                 $empfname = "Lasttname is empty";
+                echo $emplname . "<br/>";
             }
             if(empty($age))
             {
-                $emp = "age is empty";
+                $empage = "age is empty";
+                echo $empage . "<br/>";
             }
             if(empty($gen))
             {
                 $empgen = "select gender";
+                echo $empgen . "<br/>";
             }
             if(empty($user))
             {
                 $empuser = "username is empty";
+                echo $empuser . "<br/>";
             }
             if(empty($pswd))
             {
                 $emppswd = "password is empty";
+                echo $emppswd . "<br/>";
             }
-            $back = "<br/><a href='javascript:self.history.back();'>Go Back</a>";
+            $back = "<br/><a href='javascript:self.history.back();'>Go Back</a>"; 
+
+            echo $back;
         }
+
         else
         {
             $sql = "INSERT INTO members(fname, lname, gender, age, username, password) VALUES(:fname, :lname, :gender, :age, :username, :password)";
@@ -71,10 +80,11 @@
 		$query->bindparam(':username', $user);
 		$query->bindparam(':password', $pswd);
 		$query->execute();
-        }
-        echo "<p>REGISTRATION COMPLETE!</p>";
+         echo "<p>REGISTRATION COMPLETE!</p>";
         echo "Click <a href=\"login.php\">here</a> to Log-in";
         
+        }
+       
     }
     ?>
 </body>

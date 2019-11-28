@@ -77,35 +77,7 @@ if(isset($_SESSION['login']))
         </div>
         <button type="submit" name="login" class="btn btn-primary">Log-In</button>
     </form>
-    <form action="register.php" method="POST" class="signup">
-        <h3>Or are you new?</h3>
-        <div class="form-group">
-            <label for="">First name:</label><br>
-            <input type="text" class="fnamereg" placeholder="first name" name="fname">
-        </div>
-        <div class="form-group">
-            <label for="">Last name:</label><br>
-            <input type="text" class="lnamereg" placeholder="last name" name="lname">
-        </div>
-        <div class="form-group">
-            <label for="">Age:</label><br>
-            <input type="text" class="agereg" placeholder="age" name="age">
-        </div>
-        <div class="form-group">
-            <label for="">Gender:</label><br>
-            <input type="radio" class="genreg" value="male" name="gender"><label>Male</label><br>
-            <input type="radio" class="genreg" value="female" name="gender"><label>Female</label><br>
-        </div>
-        <div class="form-group">
-            <label for="">username:</label><br>
-            <input type="text" class="userreg" placeholder="new username" name="userreg">
-        </div>
-        <div class="form-group">
-            <label for="">password:</label><br>
-            <input type="password" class="pswdreg" placeholder="new password" name="pswdreg">
-        </div>
-        <button type="submit" name="register" class="btn btn-primary">Register</button>
-    </form>
+    <a href="register.html">Sign-up</a>
     </div>
 </body>
 </html>

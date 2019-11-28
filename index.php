@@ -66,8 +66,17 @@ session_start();
     </div>
 
     <center>
+        <div class="left">
+            
+        </div>
         <div class="body"> 
 
+        </div>
+        <div class="right">
+            
+        </div>
+        <div class="footer">
+            
         </div>
     </center>
     </div>

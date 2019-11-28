@@ -34,7 +34,7 @@ session_start();
 
     
     ?> 
-    <h1 class="greeting" style="float:left; width: 25%; text-align: center;font-family: verdana">LAPTOP SECTION</h1>
+    <h1 class="greeting" style="float:left; width: 25%; text-align: center;font-family: verdana">MOBILE PHONES</h1>
     <div class="navigation">
         <ul>
             <li>
