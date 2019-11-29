@@ -32,33 +32,34 @@ session_start();
 
     $user = $query->fetch(PDO::FETCH_ASSOC);
 
+    $laptop = $conn->query("SELECT * FROM laptop ORDER BY id DESC");
     
     ?> 
     <h1 class="greeting" style="float:left; width: 25%; text-align: center;font-family: verdana">LAPTOP SECTION</h1>
     <div class="navigation">
         <ul>
             <li>
-                <a href="index.php">HOME</a>
+                <a class="btn btn-primary" href="index.php">HOME</a>
             </li>
             <li>
-                <a href="">SHOP</a>
+                <a class="btn btn-primary" href="#">SHOP</a>
                 <ul>
                     <li>
-                        <a href="laptop.php">LAPTOPS</a>
+                        <a class="btn btn-primary" href="laptop.php">LAPTOPS</a>
                     </li>
                     <li>
-                        <a href="cellphone.php">MOBILE PHONES</a>
+                        <a class="btn btn-primary" href="cellphone.php">MOBILE PHONES</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="">YOU</a>  
+                <a class="btn btn-primary" href="#">YOU</a>  
                 <ul>
                     <li>
-                        <a href="edit.php">EDIT INFO</a>
+                        <a class="btn btn-primary" href="edit.php">EDIT INFO</a>
                     </li>
                     <li>
-                        <a href="logout.php">LOG OUT</a>
+                        <a class="btn btn-primary" href="logout.php">LOG OUT</a>
                     </li>
                 </ul>
             </li>
@@ -71,6 +72,32 @@ session_start();
         </div>
         <div class="body"> 
 
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>BRAND</th>
+                    <th>MODEL</th>
+                    <th>PRICE</th>
+                    <th><a class="btn btn-primary" href="">ADD</a></th>
+                </tr>
+            </thead>
+            <?php
+                while($dev = $laptop->fetch(PDO::FETCH_ASSOC))
+                {
+
+                    echo "<tbody>";
+                        echo "<tr>";
+                            echo "<td>".$dev['Brand']."</td>";
+                            echo "<td>".$dev['Model']."</td>";
+                            echo "<td> Php ".number_format($dev['Price'])."</td>";
+                            echo "<td><a class=\"btn btn-primary\" href= \"buy.php?id=".$dev['id']."\">BUY</a></td>";
+                        echo "</tr>";
+                    echo "</tbody>";
+                }
+            ?>
+        </table>
+            
         </div>
         <div class="right">
             

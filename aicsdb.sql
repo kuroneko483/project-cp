@@ -73,8 +73,6 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`ID`, `fname`, `lname`, `gender`, `age`, `username`, `password`) VALUES
-(2, 'stephen', 'barona', 'male\r\n', 18, 'stephen483', '0112093010');
 
 --
 -- Indexes for dumped tables

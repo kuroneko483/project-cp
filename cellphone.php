@@ -16,7 +16,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laptops | for sale</title>
+    <title>Mobile Phones | for sale</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
@@ -32,33 +32,34 @@ session_start();
 
     $user = $query->fetch(PDO::FETCH_ASSOC);
 
+    $laptop = $conn->query("SELECT * FROM cellphone ORDER BY id DESC");
     
     ?> 
-    <h1 class="greeting" style="float:left; width: 25%; text-align: center;font-family: verdana">MOBILE PHONES</h1>
+    <h1 class="greeting" style="float:left; width: 25%; text-align: center;font-family: verdana">Mobile Phone Section</h1>
     <div class="navigation">
         <ul>
             <li>
-                <a href="index.php">HOME</a>
+                <a class="btn btn-primary" href="index.php">HOME</a>
             </li>
             <li>
-                <a href="">SHOP</a>
+                <a class="btn btn-primary" href="#">SHOP</a>
                 <ul>
                     <li>
-                        <a href="laptop.php">LAPTOPS</a>
+                        <a class="btn btn-primary" href="laptop.php">LAPTOPS</a>
                     </li>
                     <li>
-                        <a href="cellphone.php">MOBILE PHONES</a>
+                        <a class="btn btn-primary" href="cellphone.php">MOBILE PHONES</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="">YOU</a>  
+                <a class="btn btn-primary" href="#">YOU</a>  
                 <ul>
                     <li>
-                        <a href="edit.php">EDIT INFO</a>
+                        <a class="btn btn-primary" href="edit.php">EDIT INFO</a>
                     </li>
                     <li>
-                        <a href="logout.php">LOG OUT</a>
+                        <a class="btn btn-primary" href="logout.php">LOG OUT</a>
                     </li>
                 </ul>
             </li>
@@ -67,10 +68,35 @@ session_start();
 
     <center>
         <div class="left">
-            
         </div>
         <div class="body"> 
 
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>BRAND</th>
+                    <th>MODEL</th>
+                    <th>PRICE</th>
+                    <th><a class="btn btn-primary" href="">ADD</a></th>
+                </tr>
+            </thead>
+            <?php
+                while($dev = $laptop->fetch(PDO::FETCH_ASSOC))
+                {
+
+                    echo "<tbody>";
+                        echo "<tr>";
+                            echo "<td>".$dev['Brand']."</td>";
+                            echo "<td>".$dev['Model']."</td>";
+                            echo "<td> Php ".number_format($dev['Price'])."</td>";
+                            echo "<td><a class=\"btn btn-primary\" href= \"buy.php?id=".$dev['id']."\">BUY</a></td>";
+                        echo "</tr>";
+                    echo "</tbody>";
+                }
+            ?>
+        </table>
+            
         </div>
         <div class="right">
             

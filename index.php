@@ -38,27 +38,27 @@ session_start();
     <div class="navigation">
         <ul>
             <li>
-                <a href="index.php">HOME</a>
+                <a class="btn btn-primary" href="index.php">HOME</a>
             </li>
             <li>
-                <a href="">SHOP</a>
+                <a class="btn btn-primary" href="#">SHOP</a>
                 <ul>
                     <li>
-                        <a href="laptop.php">LAPTOPS</a>
+                        <a class="btn btn-primary" href="laptop.php">LAPTOPS</a>
                     </li>
                     <li>
-                        <a href="cellphone.php">MOBILE PHONES</a>
+                        <a class="btn btn-primary" href="cellphone.php">MOBILE PHONES</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="">YOU</a>  
+                <a class="btn btn-primary" href="#">YOU</a>  
                 <ul>
                     <li>
-                        <a href="edit.php">EDIT INFO</a>
+                        <a class="btn btn-primary" href="edit.php">EDIT INFO</a>
                     </li>
                     <li>
-                        <a href="logout.php">LOG OUT</a>
+                        <a class="btn btn-primary" href="logout.php">LOG OUT</a>
                     </li>
                 </ul>
             </li>
