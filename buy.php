@@ -25,7 +25,7 @@ session_start();
 <body>
     <?php
         $id = $_GET['id'];
-        $sql = "SELECT * from laptop WHERE id=:id";
+        $sql = "SELECT * from cellphone WHERE id=:id";
         $query = $conn->prepare($sql);
         $query->execute(array(':id'=>$id));
 
@@ -61,14 +61,14 @@ session_start();
         <div class="loanform">
             <p>If you want to purchase through installment, Please fill up this form</p>
            <label for="">Downpayment:</label><br>
-           <input type="number" placeholder="minimum of Php 500" min=500><br><br>
+           <input type="number" placeholder="minimum of Php 500" name="downpay" min=500><br><br>
            <label for="">Months to Pay:</label><br>
            <select name="mtp" id="">
-               <option value="3">3 months</option>
-               <option value="6">6 months</option>
-               <option value="12">1 year</option>
-               <option value="24">2 years</option>
-               <option value="36">3 years</option>
+               <option value=3>3 months</option>
+               <option value=6>6 months</option>
+               <option value=12>1 year</option>
+               <option value=24>2 years</option>
+               <option value=36>3 years</option>
            </select>
         </div>
         <hr>
@@ -76,14 +76,14 @@ session_start();
         <label for="">Brand:</label><p><?php echo $brand?></p>
         <label for="">Model:</label><p><?php echo $model?></p>
         <label for="">Price:</label><p><?php echo "Php ".number_format($price)?></p>
+        
+        <div style="display: none">
+           <input type="number" name="proprice" value="<?php echo $price?>">
+           <input type="text" name="model" value="<?php echo $model?>">
+           <input type="text" name="brand" value="<?php echo $brand?>">
+        </div>
 
-        <button onclick="pay()" type="submit" class="btn btn-primary">BUY</button>
+        <button name="buy" type="submit" class="btn btn-primary">BUY</button>
     </form>
-<script>
-function pay()
-{
-    alert("are you sure?");
-}
-</script>
 </body>
 </html>

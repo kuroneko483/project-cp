@@ -36,7 +36,7 @@ CREATE TABLE `cellphone` (
   `Brand` varchar(100) NOT NULL,
   `Model` varchar(100) NOT NULL,
   `Price` double NOT NULL,
-  `Stock` int(11) NOT NULL
+  `Sold` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -50,7 +50,7 @@ CREATE TABLE `laptop` (
   `Brand` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Model` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Price` double NOT NULL,
-  `Stock` int(11) NOT NULL
+  `Sold` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
